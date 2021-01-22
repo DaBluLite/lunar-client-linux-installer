@@ -7,6 +7,9 @@ An open-source installer script for Lunar Client on linux.
 * Remember to make the files executeables. Run `sudo chmod +x lunar-installer.sh` and `sudo chmod +x uninstall.sh`.
 * Finally, run `sudo ./lunar-installer.sh` to install.
 
+## Update
+* To update,exit the launcher, use the uninstall script and re-install.
+
 ## Uninstallation
 * On a terminal window open where the installer is, run `sudo ./uninstall.sh`
 
