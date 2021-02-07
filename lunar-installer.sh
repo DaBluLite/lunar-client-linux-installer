@@ -1,6 +1,6 @@
 mkdir /opt/lunar-client
 cd /opt/lunar-client
-wget -r -l 1 --span-hosts --output-document=lunar.AppImage --accept-regex='https://launcherupdates.lunarclientcdn.com/Lunar%20Client-*.*.*.AppImage' -erobots=off -nH https://api.lunarclient.com/site/download?os=linux
+wget -r -l 1 --span-hosts --output-document=lunar.AppImage --accept-regex='https://launcherupdates.lunarclientcdn.com/Lunar%20Client-*.*.*.AppImage' -erobots=off -nH https://api.lunarclientprod.com/site/download?os=linux
 chmod +x lunar.AppImage
 ./lunar.AppImage --appimage-extract
 cd squashfs-root
