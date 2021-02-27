@@ -10,8 +10,7 @@ An open-source installer script for Lunar Client on linux.
 * To update,exit the launcher, use the uninstall script and re-install.
 
 ## Uninstallation
-* On a terminal window open where the installer is, run `wget https://github.com/DaBluLite/lunar-client-linux-installer/blob/main/uninstall.sh`,
-* `chmod +x uninstall.sh` and `sudo ./uninstall.sh`
+* On a terminal window open where the installer is, run `wget https://github.com/DaBluLite/lunar-client-linux-installer/blob/main/uninstall.sh`, `chmod +x uninstall.sh` and `sudo ./uninstall.sh`
 
 Tested on Ubuntu.
 
