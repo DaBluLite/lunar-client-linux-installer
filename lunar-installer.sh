@@ -1,7 +1,7 @@
 mkdir /opt/lunar-client
 cd /opt/lunar-client
 wget -r -l 1 --span-hosts --output-document=lunar.AppImage --accept-regex='https://launcherupdates.lunarclientcdn.com/Lunar%20Client-*.*.*.AppImage' -erobots=off -nH https://api.lunarclientprod.com/site/download?os=linux
-chmod +x lunar.AppImage
+chmod +xwr lunar.AppImage
 ./lunar.AppImage --appimage-extract
 cd squashfs-root
 cp * /opt/lunar-client -r
@@ -26,5 +26,9 @@ chmod 775 /home/*/Desktop/lunarclient.desktop
 chmod +x /home/*/Desktop/lunarclient.desktop
 cd /opt/lunar-client
 chmod 775 /opt/lunar-client -R
+chmod 775 /opt/lunar-client/AppRun
+chmod +rwx /opt/lunar-client/AppRun
+chmod 775 /opt/lunar-client/lunarclient
+chmod +rwx /opt/lunar-client/lunarclient
 cd /home/*/Desktop
 cp lunarclient.desktop /usr/share/applications
