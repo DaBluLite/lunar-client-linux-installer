@@ -9,7 +9,3 @@ An open-source installer script for Lunar Client on linux.
 
 ## Uninstallation
 * On a terminal window, run `wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/uninstall.sh && chmod +x uninstall.sh && sudo ./uninstall.sh`.
-
-Tested on Ubuntu.
-
-> Currently working on other distros, too.
