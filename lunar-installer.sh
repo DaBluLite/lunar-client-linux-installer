@@ -1,13 +1,13 @@
-mkdir /opt/lunar-client
+sudo mkdir /opt/lunar-client
 cd /opt/lunar-client
-wget -r -l 1 --span-hosts --output-document=lunar.AppImage --accept-regex='https://launcherupdates.lunarclientcdn.com/Lunar%20Client-*.*.*.AppImage' -erobots=off -nH https://api.lunarclientprod.com/site/download?os=linux
-chmod +xwr lunar.AppImage
-./lunar.AppImage --appimage-extract
+sudo wget -r -l 1 --span-hosts --output-document=lunar.AppImage --accept-regex='https://launcherupdates.lunarclientcdn.com/Lunar%20Client-*.*.*.AppImage' -erobots=off -nH https://api.lunarclientprod.com/site/download?os=linux
+sudo chmod +xwr lunar.AppImage
+sudo ./lunar.AppImage --appimage-extract
 cd squashfs-root
-cp * /opt/lunar-client -r
-rm * -r
+sudo cp * /opt/lunar-client -r
+sudo rm * -r
 cd /opt/lunar-client
-rm squashfs-root -r
+sudo rm squashfs-root -r
 cd /home/*/Desktop
 echo -n > lunarclient.desktop
 cat <<EOT >> lunarclient.desktop
@@ -30,13 +30,5 @@ chmod 775 /opt/lunar-client/AppRun
 chmod +rwx /opt/lunar-client/AppRun
 chmod 775 /opt/lunar-client/lunarclient
 chmod +rwx /opt/lunar-client/lunarclient
-cat <<EOT >> lunar-client.sh
-#!/bin/bash
-
-function lunar-client() {
-  bash /opt/lunar-client/AppRun
-}
-EOT
-chmod +rwx /opt/lunar-client/lunar-client.sh
 cd /home/*/Desktop
-cp lunarclient.desktop /usr/share/applications
+sudo cp lunarclient.desktop /usr/share/applications
