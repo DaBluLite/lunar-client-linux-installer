@@ -38,6 +38,5 @@ function lunar-client() {
 }
 EOT
 chmod +rwx /opt/lunar-client/lunar-client.sh
-source /opt/lunar-client/lunar-client.sh
 cd /home/*/Desktop
 cp lunarclient.desktop /usr/share/applications
