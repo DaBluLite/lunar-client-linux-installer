@@ -3,7 +3,7 @@ An open-source installer script for Lunar Client on linux.
 
 ## Installation
 * On a terminal window, run `wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/lunar-installer.sh && chmod +x lunar-installer.sh`.
-* Finally, run `sudo ./lunar-installer.sh` to install.
+* Finally, run `./lunar-installer.sh` to install.
 
 ## Update
 * To update,exit the launcher, use the uninstall script and re-install.
