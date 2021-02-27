@@ -33,6 +33,6 @@ chmod +rwx /opt/lunar-client/lunarclient
 ln -s /opt/lunar-client/lunarclient /opt/lunar-client/lunar-client
 chmod 775 /opt/lunar-client/lunar-client
 chmod +rwx /opt/lunar-client/lunar-client
-cp /opt/lunar-client/lunar-client .
+cp /opt/lunar-client/lunar-client /usr/local/
 cd /home/*/Desktop
 cp lunarclient.desktop /usr/share/applications
