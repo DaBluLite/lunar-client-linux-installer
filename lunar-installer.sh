@@ -30,9 +30,14 @@ chmod 775 /opt/lunar-client/AppRun
 chmod +rwx /opt/lunar-client/AppRun
 chmod 775 /opt/lunar-client/lunarclient
 chmod +rwx /opt/lunar-client/lunarclient
-ln -s /opt/lunar-client/lunarclient /opt/lunar-client/lunar-client
-chmod 775 /opt/lunar-client/lunar-client
-chmod +rwx /opt/lunar-client/lunar-client
-cp /opt/lunar-client/lunar-client /usr/local/
+cat <<EOT >> lunar-client.sh
+#!/bin/bash
+
+function lunar-client() {
+  bash /opt/lunar-client/AppRun
+}
+EOT
+chmod +rwx /opt/lunar-client/lunar-client.sh
+source /opt/lunar-client/lunar-client.sh
 cd /home/*/Desktop
 cp lunarclient.desktop /usr/share/applications
