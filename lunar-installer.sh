@@ -1,16 +1,18 @@
-sudo mkdir /opt/lunar-client
+SUDO_USER=$(logname)
+mkdir /opt/lunar-client
 cd /opt/lunar-client
-sudo wget -r -l 1 --span-hosts --output-document=lunar.AppImage --accept-regex='https://launcherupdates.lunarclientcdn.com/Lunar%20Client-*.*.*.AppImage' -erobots=off -nH https://api.lunarclientprod.com/site/download?os=linux
-sudo chmod +xwr lunar.AppImage
-sudo ./lunar.AppImage --appimage-extract
+wget -r -l 1 --span-hosts --output-document=lunar.AppImage --accept-regex='https://launcherupdates.lunarclientcdn.com/Lunar%20Client-*.*.*.AppImage' -erobots=off -nH https://api.lunarclientprod.com/site/download?os=linux
+chmod +xwr lunar.AppImage
+chown $SUDO_USER lunar.AppImage
+./lunar.AppImage --appimage-extract
 cd /opt/lunar-client/squashfs-root
-sudo cp * /opt/lunar-client -r
-sudo rm * -r
+cp * /opt/lunar-client -r
+rm * -r
 cd /opt/lunar-client
-sudo rm squashfs-root -r
+rm squashfs-root -r
 cd /home/*/Desktop
-sudo echo -n > lunarclient.desktop
-sudo cat <<EOT >> lunarclient.desktop
+echo -n > lunarclient.desktop
+cat <<EOT >> lunarclient.desktop
 [Desktop Entry]
 Name=Lunar Client
 Exec=/opt/lunar-client/AppRun
@@ -22,13 +24,17 @@ X-AppImage-Version=2.5.0
 Comment=Lunar Client
 Categories=Game;
 EOT
-sudo chmod 775 /home/*/Desktop/lunarclient.desktop
-sudo chmod +x /home/*/Desktop/lunarclient.desktop
+chmod 775 /home/*/Desktop/lunarclient.desktop
+chmod +x /home/*/Desktop/lunarclient.desktop
+chown $SUDO_USER /home/*/Desktop/lunarclient.desktop
 cd /opt/lunar-client
-sudo chmod 775 /opt/lunar-client -R
-sudo chmod 775 /opt/lunar-client/AppRun
-sudo chmod +rwx /opt/lunar-client/AppRun
-sudo chmod 775 /opt/lunar-client/lunarclient
-sudo chmod +rwx /opt/lunar-client/lunarclient
+chmod 775 /opt/lunar-client -R
+chown $SUDO_USER /opt/lunar-client -R
+chmod 775 /opt/lunar-client/AppRun
+chmod +rwx /opt/lunar-client/AppRun
+chown $SUDO_USER /opt/lunar-client/AppRun
+chmod 775 /opt/lunar-client/lunarclient
+chmod +rwx /opt/lunar-client/lunarclient
+chown $SUDO_USER /opt/lunar-client/lunarclient
 cd /home/*/Desktop
-sudo cp lunarclient.desktop /usr/share/applications
+cp lunarclient.desktop /usr/share/applications
