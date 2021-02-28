@@ -47,6 +47,9 @@ if [ $? -ne 0 ]; then
 fi
 }
 EOT
+chmod 775 /opt/lunar-client/last-steps.sh
+chmod +rwx /opt/lunar-client/last-steps.sh
+chown $SUDO_USER /opt/lunar-client/last-steps.sh
 chmod 775 /opt/lunar-client/lunar-client.sh
 chmod +rwx /opt/lunar-client/lunar-client.sh
 chown $SUDO_USER /opt/lunar-client/lunar-client.sh
