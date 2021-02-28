@@ -28,6 +28,11 @@ chmod 775 /home/*/Desktop/lunarclient.desktop
 chmod +x /home/*/Desktop/lunarclient.desktop
 chown $SUDO_USER /home/*/Desktop/lunarclient.desktop
 cd /opt/lunar-client
+echo -n > last-steps.sh
+cat <<EOT >> last-steps.sh
+grep -qxF 'LUNAR_CLIENT_COMMAND=$(source /opt/lunar-client/lunar-client.sh)' ~/.bashrc || echo 'LUNAR_CLIENT_COMMAND=$(source /opt/lunar-client/lunar-client.sh)' >> ~/.bashrc
+grep -qxF '$LUNAR_CLIENT_COMMAND' ~/.bashrc || echo '$LUNAR_CLIENT_COMMAND' >> ~/.bashrc
+EOT
 echo -n > lunar-client.sh
 cat <<EOT >> lunar-client.sh
 function lunar-client() {
@@ -41,6 +46,7 @@ if [ $? -ne 0 ]; then
   echo "If you see this even after uninstalling Lunar Client, go to 'https://github.com/DaBluLite/lunar-client-linux-installer/blob/main/remove-bash-command.md' to see how to remove it."
 fi
 }
+EOT
 chmod 775 /opt/lunar-client/lunar-client.sh
 chmod +rwx /opt/lunar-client/lunar-client.sh
 chown $SUDO_USER /opt/lunar-client/lunar-client.sh
@@ -54,5 +60,3 @@ chmod +rwx /opt/lunar-client/lunarclient
 chown $SUDO_USER /opt/lunar-client/lunarclient
 cd /home/*/Desktop
 cp lunarclient.desktop /usr/share/applications
-grep -qxF 'LUNAR_CLIENT_COMMAND=$(source /opt/lunar-client/lunar-client.sh)' ~/.bashrc || echo 'LUNAR_CLIENT_COMMAND=$(source /opt/lunar-client/lunar-client.sh)' >> ~/.bashrc
-grep -qxF '$LUNAR_CLIENT_COMMAND' ~/.bashrc || echo '$LUNAR_CLIENT_COMMAND' >> ~/.bashrc
