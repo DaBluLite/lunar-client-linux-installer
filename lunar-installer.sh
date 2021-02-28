@@ -38,7 +38,7 @@ bash -e <<TRY
 TRY
 if [ $? -ne 0 ]; then
   echo "Lunar Client is not installed. If you want to install it, go to 'https://github.com/DaBluLite/lunar-client-linux-installer' for the instructions."
-  echo "If you see this even after uninstalling Lunar Client, go to 'https://github.com/DaBluLite/lunar-client-linux-installer' to see how to remove it."
+  echo "If you see this even after uninstalling Lunar Client, go to 'https://github.com/DaBluLite/lunar-client-linux-installer/blob/main/remove-bash-command.md' to see how to remove it."
 fi
 }
 chmod 775 /opt/lunar-client/lunar-client.sh
