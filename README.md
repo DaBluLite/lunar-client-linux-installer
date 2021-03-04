@@ -8,4 +8,4 @@ An open-source installer script for Lunar Client on linux.
 * On a terminal window, run `curl -Ls https://git.io/JqfkB | sudo sh`.
 
 ## Uninstallation
-* On a terminal window, run `curl -Ls https://git.io/Jqfk5 | sudo sh`.
+* On a terminal window, run `curl -Ls https://git.io/lunarinstaller-uninstall | sudo sh`.
