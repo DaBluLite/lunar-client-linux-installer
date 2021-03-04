@@ -2,7 +2,7 @@
 An open-source installer script for Lunar Client on linux.
 
 ## Installation
-* On a terminal window, run `curl -Ls https://git.io/Jqfkq | sudo sh`.
+* On a terminal window, run `curl -Ls https://git.io/lunarinstaller-install | sudo sh`.
 
 ## Update
 * On a terminal window, run `curl -Ls https://git.io/JqfkB | sudo sh`.
