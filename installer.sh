@@ -8,7 +8,7 @@ echo 'Available options:'
 echo '1) Install '$APP_NAME
 echo '2) Uninstall '$APP_NAME
 echo -n 'Choose an option: ' && read INSTALLER_OPTION
-if [[ $INSTALLER_OPTION = 1 ]]
+if [ $INSTALLER_OPTION = 1 ]
 then
   mkdir /opt/$APP_PATH_NAME
   cd /opt/$APP_PATH_NAME
