@@ -2,7 +2,7 @@ clear
 echo -en "\033]0;Lunar Client Linux Installer\a"
 APP_NAME='Lunar Client' #This will be the main app name. It will be displayed in the app launcher and in the desktop shortcut
 APP_PATH_NAME=lunar-client #This will be the name for the paths, the AppImage and others. MUST BE URL-FRIENDLY!
-APP_URL=https://launcherupdates.lunarclientcdn.com/Lunar%20Client-2.5.2.AppImage #This must lead to an appimage file
+APP_URL=https://launcherupdates.lunarclientcdn.com/Lunar%20Client-2.6.0.AppImage #This must lead to an appimage file
 SUDO_USER=$(logname)
 echo 'Available options:'
 echo '1) Install '$APP_NAME
@@ -30,9 +30,9 @@ then
   Exec=/opt/$APP_PATH_NAME/AppRun
   Terminal=false
   Type=Application
-  Icon=/opt/$APP_PATH_NAME/.DirIcon
+  Icon=/opt/$APP_PATH_NAME/lunarclient.png
   StartupWMClass=$APP_NAME
-  X-AppImage-Version=2.5.0
+  X-AppImage-Version=2.6.0
   Comment=$APP_NAME
   Categories=Utility;
 EOT
