@@ -51,6 +51,6 @@ wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/ma
 ln -s /opt/lunar-client-linux-installer/lunar-client-linux-installer /bin/lunar-client-linux-installer
 chmod +rwx /bin/lunar-client-linux-installer
 chown $SUDO_USER /bin/lunar-client-linux-installer
+echo $APP_NAME" was successfully installed! Run with "$APP_PATH_NAME
 cd ~
 rm lunar-installer.sh
-echo $APP_NAME" was successfully installed! Run with "$APP_PATH_NAME
