@@ -14,6 +14,23 @@ if [ $INSTALLER_OPTION = 1 ]
 then
   rm /opt/lunar-client-linux-installer/update.sh
   rm /opt/lunar-client-linux-installer/uninstall.sh
-  wget $APP_URL
-  wget $APP_URL
+  cd /opt/lunar-client-linux-installer
+  wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/dependencies-scripts/update.sh
+  wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/dependencies-scripts/uninstall.sh
+fi
+if [ $INSTALLER_OPTION = 2 ]
+then
+  bash /opt/lunar-client-linux-installer/update.sh
+fi
+if [ $INSTALLER_OPTION = 3 ]
+then
+  bash /opt/lunar-client-linux-installer/uninstall.sh
+fi
+if [ $INSTALLER_OPTION < 1 ]
+then
+  echo "Not an option!"
+fi
+if [ $INSTALLER_OPTION > 3 ]
+then
+  echo "Not an option!"
 fi
