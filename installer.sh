@@ -48,7 +48,8 @@ EOT
   chown $SUDO_USER /opt/$APP_PATH_NAME/AppRun
   cd /home/*/Desktop
   cp $APP_PATH_NAME.desktop /usr/share/applications
-  ln -s /opt/$APP_PATH_NAME/lunarclient /bin/$APP_PATH_NAME
+  ln -s /opt/$APP_PATH_NAME/AppRun /bin/$APP_PATH_NAME
+  echo $APP_NAME" was successfully installed! Run with "$APP_PATH_NAME
 else
   rm -R /opt/$APP_PATH_NAME
   rm /home/*/Desktop/$APP_PATH_NAME.desktop
