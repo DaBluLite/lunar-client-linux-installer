@@ -44,13 +44,12 @@ chown $SUDO_USER /opt/$APP_PATH_NAME/AppRun
 cd /home/*/Desktop
 cp $APP_PATH_NAME.desktop /usr/share/applications
 ln -s /opt/$APP_PATH_NAME/AppRun /bin/$APP_PATH_NAME
-mkdir /opt/lunar-client-linux-installer && cd /opt/lunar-client-linux-installer
+mkdir /opt/lunar-client-installer
+cd /opt/lunar-client-installer
 wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/dependencies-scripts/update.sh
 wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/dependencies-scripts/uninstall.sh
-wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/dist/lunar-client-linux-installer
-ln -s /opt/lunar-client-linux-installer/lunar-client-linux-installer /bin/lunar-client-installer
+wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/dist/lunar-client-installer
+ln -s /opt/lunar-client-installer/lunar-client-installer /bin/lunar-client-installer
 chmod +rwx /bin/lunar-client-installer
 chown $SUDO_USER /bin/lunar-client-installer
 echo $APP_NAME" was successfully installed! Run with "$APP_PATH_NAME
-cd ~
-rm lunar-installer.sh
