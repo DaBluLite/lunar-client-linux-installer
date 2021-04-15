@@ -26,11 +26,3 @@ if [ $INSTALLER_OPTION = 3 ]
 then
   bash /opt/lunar-client-linux-installer/uninstall.sh
 fi
-if [ $INSTALLER_OPTION < 1 ]
-then
-  echo "Not an option!"
-fi
-if [ $INSTALLER_OPTION > 3 ]
-then
-  echo "Not an option!"
-fi
