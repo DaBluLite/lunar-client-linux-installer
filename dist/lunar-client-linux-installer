@@ -5,12 +5,32 @@ APP_NAME='Lunar Client' #This will be the main app name. It will be displayed in
 APP_PATH_NAME=lunar-client #This will be the name for the paths, the AppImage and others. MUST BE URL-FRIENDLY!
 APP_URL=https://launcherupdates.lunarclientcdn.com/Lunar%20Client-2.6.0.AppImage #This must lead to an appimage file
 SUDO_USER=$(logname)
-echo 'Select an option:'
-echo '1) Refresh/Update Scripts'
-echo '2) Update LC'
-echo '3) Uninstall LC'
-echo -n 'Choose an option: ' && read INSTALLER_OPTION
-if [ $INSTALLER_OPTION = 1 ]
+if [ ! $1 ]
+then
+  echo 'Select an option:'
+  echo '1) Refresh/Update Scripts'
+  echo '2) Update LC'
+  echo '3) Uninstall LC'
+  echo -n 'Choose an option: ' && read INSTALLER_OPTION
+  if [ $INSTALLER_OPTION = 1 ]
+  then
+    rm /opt/lunar-client-linux-installer/update.sh
+    rm /opt/lunar-client-linux-installer/uninstall.sh
+    cd /opt/lunar-client-linux-installer
+    wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/dependencies-scripts/update.sh
+    wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/dependencies-scripts/uninstall.sh
+  fi
+  if [ $INSTALLER_OPTION = 2 ]
+  then
+    bash /opt/lunar-client-linux-installer/update.sh
+  fi
+  if [ $INSTALLER_OPTION = 3 ]
+  then
+    bash /opt/lunar-client-linux-installer/uninstall.sh
+  fi
+  return
+fi
+if [ $1 = '--refresh' ]
 then
   rm /opt/lunar-client-linux-installer/update.sh
   rm /opt/lunar-client-linux-installer/uninstall.sh
@@ -18,11 +38,11 @@ then
   wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/dependencies-scripts/update.sh
   wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/dependencies-scripts/uninstall.sh
 fi
-if [ $INSTALLER_OPTION = 2 ]
+if [ $1 = '--update' ]
 then
   bash /opt/lunar-client-linux-installer/update.sh
 fi
-if [ $INSTALLER_OPTION = 3 ]
+if [ $1 = '--uninstall' ]
 then
   bash /opt/lunar-client-linux-installer/uninstall.sh
 fi
