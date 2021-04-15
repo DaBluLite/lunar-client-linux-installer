@@ -8,10 +8,10 @@ An open-source installer script for Lunar Client on linux.
 * You can either launch the client from the Applications Menu or from the desktop shortcut, or by running `lunar-client` in a terminal window.
 
 ## Updating/Refreshing the scripts
-* On a terminal window, run `sudo lunar-client-linux-installer` and select the first option.
+* On a terminal window, run `sudo lunar-client-installer` and select the first option.
 
 ## Updating the Launcher
-* On a terminal window, run `sudo lunar-client-linux-installer` and select the second option.
+* On a terminal window, run `sudo lunar-client-installer` and select the second option.
 
 ## Uninstalling the Launcher
-* On a terminal window, run `sudo lunar-client-linux-installer` and select the third option.
+* On a terminal window, run `sudo lunar-client-installer` and select the third option.
