@@ -5,7 +5,8 @@ rm -R /opt/lunar-client
 rm /home/*/Desktop/lunar-client.desktop
 rm /usr/share/applications/lunar-client.desktop
 rm /bin/lunar-client
-rm /bin/lunar-client-linux-installer/lunar-client-linux-installer
+rm /bin/lunar-client-installer
+rm /opt/lunar-client-linux-installer/lunar-client-linux-installer
 mkdir /opt/$APP_PATH_NAME
 cd /opt/$APP_PATH_NAME
 wget -r -l 1 --span-hosts --output-document=$APP_PATH_NAME.AppImage -erobots=off -nH $APP_URL
@@ -48,4 +49,5 @@ ln -s /opt/$APP_PATH_NAME/AppRun /bin/$APP_PATH_NAME
 mkdir /opt/lunar-client-linux-installer
 cd /opt/lunar-client-linux-installer
 wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/dist/lunar-client-linux-installer
+ln -s /opt/lunar-client-linux-installer/lunar-client-linux-installer /bin/lunar-client-installer
 echo $APP_NAME" was successfully updated! Run with "$APP_PATH_NAME
