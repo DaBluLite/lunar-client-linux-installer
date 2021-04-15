@@ -30,7 +30,7 @@ then
   fi
   return
 fi
-if [ $1 = '--refresh' ]
+if [ $1 = 'refresh' ]
 then
   rm /opt/lunar-client-linux-installer/update.sh
   rm /opt/lunar-client-linux-installer/uninstall.sh
@@ -38,11 +38,11 @@ then
   wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/dependencies-scripts/update.sh
   wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/dependencies-scripts/uninstall.sh
 fi
-if [ $1 = '--update' ]
+if [ $1 = 'update' ]
 then
   bash /opt/lunar-client-linux-installer/update.sh
 fi
-if [ $1 = '--uninstall' ]
+if [ $1 = 'uninstall' ]
 then
   bash /opt/lunar-client-linux-installer/uninstall.sh
 fi
