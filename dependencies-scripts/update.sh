@@ -6,7 +6,8 @@ rm /home/*/Desktop/lunar-client.desktop
 rm /usr/share/applications/lunar-client.desktop
 rm /bin/lunar-client
 rm /bin/lunar-client-installer
-rm /opt/lunar-client-linux-installer/lunar-client-linux-installer
+rm -R /opt/lunar-client-installer
+rm -R /opt/lunar-client-installer-command
 mkdir /opt/$APP_PATH_NAME
 cd /opt/$APP_PATH_NAME
 wget -r -l 1 --span-hosts --output-document=$APP_PATH_NAME.AppImage -erobots=off -nH $APP_URL
