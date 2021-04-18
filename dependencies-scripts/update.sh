@@ -6,7 +6,7 @@ rm /home/*/Desktop/lunar-client.desktop
 rm /usr/share/applications/lunar-client.desktop
 rm /bin/lunar-client
 rm /bin/lunar-client-installer
-rm -R /opt/lunar-client-installer
+rm /opt/lunar-client-installer/uninstall.sh
 rm -R /opt/lunar-client-installer-command
 mkdir /opt/$APP_PATH_NAME
 cd /opt/$APP_PATH_NAME
@@ -47,8 +47,12 @@ chown $SUDO_USER /opt/$APP_PATH_NAME/AppRun
 cd /home/*/Desktop
 cp $APP_PATH_NAME.desktop /usr/share/applications
 ln -s /opt/$APP_PATH_NAME/AppRun /bin/$APP_PATH_NAME
-mkdir /opt/lunar-client-linux-installer
-cd /opt/lunar-client-linux-installer
-wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/dist/lunar-client-linux-installer
-ln -s /opt/lunar-client-linux-installer/lunar-client-linux-installer /bin/lunar-client-installer
+cd /opt/lunar-client-installer
+wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/dependencies-scripts/uninstall.sh
+mkdir /opt/lunar-client-installer-command
+cd /opt/lunar-client-installer-command
+wget https://raw.githubusercontent.com/DaBluLite/lunar-client-linux-installer/main/dist/lunar-client-installer
+ln -s /opt/lunar-client-installer-command/lunar-client-installer /bin/lunar-client-installer
+chmod +rwx /bin/lunar-client-installer
+chown $SUDO_USER /bin/lunar-client-installer
 echo $APP_NAME" was successfully updated! Run with "$APP_PATH_NAME
