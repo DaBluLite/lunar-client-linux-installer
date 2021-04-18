@@ -21,11 +21,11 @@ then
 fi
 if [ $INSTALLER_OPTION = 2 ]
 then
-  bash /opt/lunar-client-linux-installer/update.sh
+  bash /opt/lunar-client-installer/update.sh
   return
 fi
 if [ $INSTALLER_OPTION = 3 ]
 then
-  bash /opt/lunar-client-linux-installer/uninstall.sh
+  bash /opt/lunar-client-installer/uninstall.sh
   return
 fi
