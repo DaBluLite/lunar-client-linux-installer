@@ -3,7 +3,7 @@ echo -en "\033]0;Lunar Client Linux Installer\a"
 clear
 APP_NAME='Lunar Client' #This will be the main app name. It will be displayed in the app launcher and in the desktop shortcut
 APP_PATH_NAME=lunar-client #This will be the name for the paths, the AppImage and others. MUST BE URL-FRIENDLY!
-APP_URL=https://launcherupdates.lunarclientcdn.com/Lunar%20Client-2.6.0.AppImage #This must lead to an appimage file
+APP_URL=https://launcherupdates.lunarclientcdn.com/Lunar%20Client-2.7.3.AppImage #This must lead to an appimage file
 SUDO_USER=$(logname)
 mkdir /opt/$APP_PATH_NAME
 cd /opt/$APP_PATH_NAME
